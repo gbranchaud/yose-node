@@ -1,6 +1,9 @@
 {
   "name": "yose-node",
   "version": "1.0.0",
+  "engines": {
+    "node": "0.10.x"
+  },
   "description": "my try at yosethegame.com",
   "main": "app.js",
   "scripts": {
