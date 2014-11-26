@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/gbranchaud/yose-node",
   "devDependencies": {
+    "chai": "^1.10.0",
     "cheerio": "^0.18.0",
     "mocha": "^2.0.1",
     "supertest": "^0.15.0"
