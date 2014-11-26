@@ -21,4 +21,5 @@ describe("start challenge - first web page", function () {
     });
   });
 
+  testServer.close();
 });
