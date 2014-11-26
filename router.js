@@ -6,9 +6,11 @@ exports.onRequest = function (request, response) {
 
   if (parsedUrl.pathname === "/") {
     startChallenge.firstWebPage(request, response);
+  } else if (parsedUrl.pathname === "/ping") {
+    startChallenge.firstWebService(request, response);
+  } else {
+    fallbackOn404(request, response);
   }
-
-  fallbackOn404(request, response);
 };
 
 function fallbackOn404(request, response) {

@@ -30,7 +30,7 @@ describe("start challenge", function () {
     });
   });
 
-  describe.skip("first web service", function () {
+  describe("first web service", function () {
     it("should return a successful json response on /ping", function (done) {
       request(testServer)
       .get("/ping")
