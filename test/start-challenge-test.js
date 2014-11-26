@@ -70,7 +70,7 @@ describe("start challenge", function () {
         .get("/gbranchaud/yose-node")
         .expect(function(response) {
           var $ = cheerio.load(response.text);
-          $("#readme").text().should.contain("yosethegame");
+          $("#readme").text().should.contain("YoseTheGame");
         })
         .end(done);
     });
