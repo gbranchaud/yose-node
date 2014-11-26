@@ -5,7 +5,6 @@ var router = require("../router.js");
 
 describe("start challenge - first web page", function () {
   var testServer = http.createServer(router.onRequest).listen(5001);
-  testServer.on("close", function() { console.log("end of server"); });
 
   it("should return 200 OK", function () {
     http.get("http://localhost:5001", function(res) {
@@ -20,6 +19,4 @@ describe("start challenge - first web page", function () {
       });
     });
   });
-
-  testServer.close();
 });
