@@ -38,10 +38,10 @@ describe("start challenge", function () {
       .expect("Content-Type", "application/json", done);
     });
 
-    it("should return { 'alive': 'true' } response on /ping", function (done) {
+    it("should return { 'alive': true } response on /ping", function (done) {
       request(testServer)
       .get("/ping")
-      .expect('{ "alive" : "true" }', done);
+      .expect('{ "alive" : true }', done);
     });
   });
 });
