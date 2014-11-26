@@ -7,5 +7,4 @@ my try at www.yosethegame.com, in nodejs.
     $ npm start
 
 ## Todo
-* add tests for 1-1
-* add tests for 1-2 before doing the implementation (TDD)
+* start the 2nd challenge
