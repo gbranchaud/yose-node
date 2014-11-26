@@ -1,21 +1,24 @@
+var http = require("http");
 var chai = require("chai");
 var expect = chai.expect;
-var sinon = require("sinon");
-var startChallenge = require("../start-challenge.js");
+var router = require("../router.js");
 
 describe("start challenge - first web page", function () {
-  it("should return 200 OK", function () {
-    var res = {writeHead: sinon.spy(), end: sinon.spy()};
-    startChallenge.firstWebPage({}, res);
+  var testServer = http.createServer(router.onRequest).listen(5001);
+  testServer.on("close", function() { console.log("end of server"); });
 
-    expect(res.writeHead.args[0][0]).to.equal(200);
+  it("should return 200 OK", function () {
+    http.get("http://localhost:5001", function(res) {
+      expect(res.statusCode).equal(200);
+    });
   });
 
   it("should return a response containing 'Hello Yose'", function () {
-    var res = {writeHead: sinon.spy(), end: sinon.spy()};
-    startChallenge.firstWebPage({}, res);
-
-    var responseBody = res.end.args[0][0];
-    expect(responseBody).to.contain("Hello Yose");
+    http.get("http://localhost:5001", function(res) {
+      res.once('data', function (chunk) {
+        expect(chunk.toString()).contain("Hello Yose");
+      });
+    });
   });
+
 });
