@@ -1,3 +1,10 @@
 language: node_js
 node_js:
-  - iojs
+- iojs
+deploy:
+  provider: heroku
+  api_key:
+    secure: tR8rGcWtmBHRNtwI4bHLLxEQ1BenfVYbfVLPS3gHm/pW+CFcSrg4kSeDlYnVRsrbfiNb7VyMA2uCbbsuPSHaffEw7f0kfweM1oodokNu4tKvUp3fwcDnd7B8Pj+aH2M24hyL5eKYjdeo7J6fFf4OKyvxmNXfE401eY6E9MwxxI0=
+  app: yose-node
+  on:
+    repo: gbranchaud/yose-node
