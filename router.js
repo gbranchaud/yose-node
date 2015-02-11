@@ -1,13 +1,14 @@
 var url = require("url");
-var startChallenge = require('./start-challenge');
+var home = require('./endpoints/home');
+var ping = require('./endpoints/ping');
 
 exports.onRequest = function (request, response) {
   var parsedUrl = url.parse(request.url);
 
   if (parsedUrl.pathname === "/") {
-    startChallenge.firstWebPage(request, response);
+    home.handle(request, response);
   } else if (parsedUrl.pathname === "/ping") {
-    startChallenge.firstWebService(request, response);
+    ping.handle(request, response);
   } else {
     fallbackOn404(request, response);
   }
