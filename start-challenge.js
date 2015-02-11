@@ -1,6 +1,8 @@
+var fs = require('fs');
+
 exports.firstWebPage = function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end('<!DOCTYPE html>\n<html><body>Hello Yose<ul><li><pre><a id="contact-me-link"/> <a id="repository-link" href="https://github.com/gbranchaud/yose-node">github repo</a></pre></li></ul></body></html>');
+  res.end(fs.readFileSync("./assets/home.html", {encoding: "utf8"}));
 };
 
 exports.firstWebService = function (req, res) {

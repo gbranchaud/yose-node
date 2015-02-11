@@ -22,5 +22,15 @@ describe("portfolio challenge", function () {
         .get("/")
         .expect(/a id="contact-me-link"/, done);
     });
+
+    it("contact me link should point to my LinkedIn profile", function (done) {
+      request(testServer)
+        .get("/")
+        .expect(function(response) {
+          var $ = cheerio.load(response.text);
+          $("a#contact-me-link").attr("href").should.equal("http://ca.linkedin.com/in/gabrielbranchaud");
+        })
+        .end(done);
+    });
   });
 });
