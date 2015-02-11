@@ -16,7 +16,7 @@ describe("portfolio challenge", function () {
     testServer.close();
   });
 
-  describe("contact information", function() {
+  describe("contact information", function () {
     it("should include a 'Contact me' link on /", function (done) {
       request(testServer)
         .get("/")
@@ -26,9 +26,21 @@ describe("portfolio challenge", function () {
     it("contact me link should point to my LinkedIn profile", function (done) {
       request(testServer)
         .get("/")
-        .expect(function(response) {
+        .expect(function (response) {
           var $ = cheerio.load(response.text);
           $("a#contact-me-link").attr("href").should.equal("http://ca.linkedin.com/in/gabrielbranchaud");
+        })
+        .end(done);
+    });
+  });
+
+  describe("ping", function () {
+    it("should include a link to the 1st web service on /", function (done) {
+      request(testServer)
+        .get("/")
+        .expect(function (response) {
+          var $ = cheerio.load(response.text);
+          $("a#ping-challenge-link").attr("href").should.equal("/ping");
         })
         .end(done);
     });
