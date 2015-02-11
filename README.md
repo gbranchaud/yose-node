@@ -6,8 +6,9 @@ my try at [YoseTheGame](www.yosethegame.com), in iojs.
 ## Running tests
     $ npm test
 
-## Usage
+## Starting server
     $ npm start
 
 ## Todo
-* start the 2nd challenge
+* get someone to perfection game the code/tests
+* keep going in the challenge
