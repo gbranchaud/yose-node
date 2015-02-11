@@ -12,6 +12,10 @@ describe("start challenge", function () {
     testServer = http.createServer(router.onRequest).listen(5001);
   });
 
+  after(function stopServer() {
+    testServer.close();
+  });
+
   describe("first web page", function() {
     it("should return a successful html response on /", function (done) {
       request(testServer)
