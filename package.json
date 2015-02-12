@@ -2,7 +2,7 @@
   "name": "yose-node",
   "version": "1.0.0",
   "engines": {
-    "iojs": "1.1.x"
+    "iojs": "1.x"
   },
   "description": "my try at yosethegame.com",
   "main": "app.js",
