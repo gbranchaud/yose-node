@@ -7,7 +7,7 @@ var should = chai.should();
 var router = require("../router");
 
 var testServer = null;
-describe("start challenge", function () {
+describe("World Start", function () {
   before(function launchServer() {
     testServer = http.createServer(router.onRequest).listen(5001);
   });
