@@ -7,7 +7,7 @@ var should = chai.should();
 var router = require("../router");
 
 var testServer = null;
-describe("start challenge", function () {
+describe("World Start", function () {
   before(function launchServer() {
     testServer = http.createServer(router.onRequest).listen(5001);
   });
@@ -48,7 +48,10 @@ describe("start challenge", function () {
     it("should return { 'alive': true } response on /ping", function (done) {
       request(testServer)
         .get("/ping")
-        .expect('{ "alive" : true }', done);
+        .expect(function(response) {
+            JSON.parse(response.text).should.deep.equal({ alive:true });
+        })
+        .end(done);
     });
   });
 

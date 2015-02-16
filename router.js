@@ -3,18 +3,21 @@ var home = require('./endpoints/home');
 var ping = require('./endpoints/ping');
 
 exports.onRequest = function (request, response) {
+    var routes = [
+      { resource:/^\/$/,     endpoint:home.handle },
+      { resource:/^\/ping$/, endpoint:ping.handle },
+      { resource:/^.*$/,     endpoint:answerWith404 },
+    ];
   var parsedUrl = url.parse(request.url);
 
-  if (parsedUrl.pathname === "/") {
-    home.handle(request, response);
-  } else if (parsedUrl.pathname === "/ping") {
-    ping.handle(request, response);
-  } else {
-    fallbackOn404(request, response);
-  }
+  routes.forEach(function(route) {
+    if(route.resource.test(parsedUrl.pathname)) {
+      route.endpoint(request, response);
+    }
+  });
 };
 
-function fallbackOn404(request, response) {
+function answerWith404(request, response) {
   response.writeHead(404, {'Content-Type': 'text/plain'});
   response.end("page not found.");
 }
