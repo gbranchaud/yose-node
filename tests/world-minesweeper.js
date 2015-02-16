@@ -23,5 +23,15 @@ describe("World Minesweeper", function () {
         .expect(200)
         .expect("Content-Type", "text/html", done);
     });
+
+    it("page should have a title element with Minesweeper text", function (done) {
+      request(testServer)
+        .get("/minesweeper")
+        .expect(function (response) {
+          var $ = cheerio.load(response.text);
+          $("#title")[0].children[0].nodeValue.should.contain("Minesweeper");
+        })
+        .end(done);
+    });
   });
 });
