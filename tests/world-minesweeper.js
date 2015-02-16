@@ -24,7 +24,7 @@ describe("World Minesweeper", function () {
         .expect("Content-Type", "text/html", done);
     });
 
-    it("page should have a title element with Minesweeper text", function (done) {
+    it("page should have a title element with 'Minesweeper' in it", function (done) {
       request(testServer)
         .get("/minesweeper")
         .expect(function (response) {
