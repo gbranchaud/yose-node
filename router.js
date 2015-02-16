@@ -1,12 +1,13 @@
 var url = require("url");
 var home = require('./endpoints/home');
+var minesweeper = require('./endpoints/minesweeper');
 var ping = require('./endpoints/ping');
 
 exports.onRequest = function (request, response) {
     var routes = [
       { resource:/^\/$/,            endpoint:home.handle },
+      { resource:/^\/minesweeper$/, endpoint:minesweeper.handle},
       { resource:/^\/ping$/,        endpoint:ping.handle },
-      { resource:/^\/minesweeper$/, endpoint: function() { response.writeHead(200, {'Content-Type': 'text/html'}); response.end(); }},
       { resource:/^.*$/,            endpoint:answerWith404 },
     ];
   var parsedUrl = url.parse(request.url);
