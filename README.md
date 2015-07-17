@@ -1,4 +1,4 @@
-yose-node [![Build Status](https://travis-ci.org/gbranchaud/yose-node.svg?branch=master)](https://travis-ci.org/gbranchaud/yose-node)
+yose-node [![Build Status](https://travis-ci.org/gbranchaudrubenovitch/yose-node.svg?branch=master)](https://travis-ci.org/gbranchaudrubenovitch/yose-node)
 =========
 
 my try at [YoseTheGame](www.yosethegame.com), in [iojs](https://iojs.org).
