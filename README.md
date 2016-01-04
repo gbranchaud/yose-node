@@ -1,7 +1,10 @@
-yose-node [![Build Status](https://travis-ci.org/gbranchaudrubenovitch/yose-node.svg?branch=master)](https://travis-ci.org/gbranchaudrubenovitch/yose-node)
-=========
+#yose-node
+[![Build Status](https://travis-ci.org/gbranchaudrubenovitch/yose-node.svg?branch=master)](https://travis-ci.org/gbranchaudrubenovitch/yose-node)
+[![Dependency Status](https://david-dm.org/gbranchaudrubenovitch/yose-node.svg)](https://david-dm.org/gbranchaudrubenovitch/yose-node)
+[![devDependency Status](https://david-dm.org/gbranchaudrubenovitch/yose-node/dev-status.svg)](https://david-dm.org/gbranchaudrubenovitch/yose-node#info=devDependencies)
+___
 
-my try at [YoseTheGame](www.yosethegame.com), in [iojs](https://iojs.org).
+my try at [YoseTheGame](www.yosethegame.com), in [node.js](https://nodejs.org).
 
 ## Running tests
     $ npm test
@@ -10,5 +13,4 @@ my try at [YoseTheGame](www.yosethegame.com), in [iojs](https://iojs.org).
     $ npm start
 
 ## Todo
-* get someone to perfection game the code/tests
 * keep going in the challenge
