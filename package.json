@@ -22,7 +22,7 @@
   "homepage": "https://github.com/gbranchaud/yose-node",
   "devDependencies": {
     "chai": "^3.2.0",
-    "cheerio": "^0.20.0",
+    "cheerio": "^0.21.0",
     "mocha": "^2.5.0",
     "supertest": "^1.1.0"
   }
